@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleLibrary
 {
@@ -14,16 +11,16 @@ namespace SampleLibrary
 
         string Model { get; set; }
 
-        string VehicleIdentificationNumber { get; set; }
-
         FuelType FuelType { get; set; }
 
         EngineState EngineState { get; set; }
 
         RadioState RadioState { get; set; }
 
-        void StartVehicle(Car car);
+        List<String> MessageLog { get; set; } 
 
-        void StopVehicle(Car car);
+        void StartVehicle(IVehicle vehicle);
+
+        void StopVehicle(IVehicle vehicle);
     }
 }
