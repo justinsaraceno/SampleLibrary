@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using FluentAssertions;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using SampleLibrary;
 
 namespace SampleLibraryTests
@@ -13,7 +10,7 @@ namespace SampleLibraryTests
     public class VehicleTests
     {
         [TestMethod]
-        public void StartVehicle_StoppedVehicle_ShouldChangeEngineStateToStarted()
+        public void StartVehicle_StoppedVehicle_ShouldChangeEngineStateToStarted() // Positive test
         {
             // Arrange
             var vehicle = new Vehicle
@@ -32,7 +29,7 @@ namespace SampleLibraryTests
         }
 
         [TestMethod]
-        public void StartVehicle_StartedVehicle_ShouldNotChangeEngineState()
+        public void StartVehicle_StartedVehicle_ShouldNotChangeEngineState() // Negative test
         {
             // Arrange
             var vehicle = new Vehicle
@@ -50,7 +47,7 @@ namespace SampleLibraryTests
         }
 
         [TestMethod]
-        public void StopVehicle_StartedVehicle_ShouldChangeEngineStateToStopped()
+        public void StopVehicle_StartedVehicle_ShouldChangeEngineStateToStopped()  // Positive test
         {
             // Arrange
             var vehicle = new Vehicle
@@ -69,7 +66,7 @@ namespace SampleLibraryTests
         }
 
         [TestMethod]
-        public void StopVehicle_StoppedVehicle_ShouldNotChangeEngineState()
+        public void StopVehicle_StoppedVehicle_ShouldNotChangeEngineState()  // Negative test
         {
             // Arrange
             var vehicle = new Vehicle
@@ -87,7 +84,7 @@ namespace SampleLibraryTests
         }
 
         //[TestMethod]
-        //public void WarmGlowplugs_DieselVehicle_ShouldAddMessageLogString()
+        //public void WarmGlowplugs_DieselVehicle_ShouldAddMessageLogString()  // Positive test of internal method
         //{
         //    // Arrange
         //    var vehicle = new Vehicle { FuelType = FuelType.Diesel, MessageLog = new List<string>() };
@@ -101,7 +98,7 @@ namespace SampleLibraryTests
         //}
 
         //[TestMethod]
-        //public void WarmGlowplugs_NonDieselVehicle_ShouldThrowNotSupportedException()
+        //public void WarmGlowplugs_NonDieselVehicle_ShouldThrowNotSupportedException()  // Asserting exception
         //{
         //    // Arrange
         //    var vehicle = new Vehicle { FuelType = FuelType.CompressedNaturalGas, MessageLog = new List<string>() };
@@ -112,11 +109,11 @@ namespace SampleLibraryTests
         //    // Assert
         //    act.ShouldThrow<NotSupportedException>("Can not warm glow-plugs unless the vehicle has a diesel engine.");
         //    vehicle.MessageLog.Count.Should().Be(0);
-            
+
         //}
 
         //[TestMethod]
-        //public void RunEngineCoolingProcess_Vehicle_ShouldAddMessageLogString()
+        //public void RunEngineCoolingProcess_Vehicle_ShouldAddMessageLogString()  // 
         //{
         //    // Arrange
         //    var vehicle = new Vehicle { MessageLog = new List<string>() };

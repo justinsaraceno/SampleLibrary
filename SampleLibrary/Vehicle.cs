@@ -37,7 +37,7 @@ namespace SampleLibrary
             }
         }
 
-        internal void WarmGlowplugs(IVehicle vehicle)
+        protected internal void WarmGlowplugs(IVehicle vehicle)
         {
             if (vehicle.FuelType == FuelType.Diesel)
             {
@@ -49,7 +49,7 @@ namespace SampleLibrary
             }
         }
 
-        internal void RunEngineCoolingProcess(IVehicle vehicle)
+        protected internal void RunEngineCoolingProcess(IVehicle vehicle)
         {
             vehicle.MessageLog.Add("Cooling engine.");
         }

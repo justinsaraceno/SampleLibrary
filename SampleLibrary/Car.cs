@@ -5,25 +5,11 @@ namespace SampleLibrary
 {
     public class Car : Vehicle
     {
-        public int Year { get; set; }
-
-        public string Make { get; set; }
-
-        public string Model { get; set; }
-
-        public FuelType FuelType { get; set; }
-
-        public EngineState EngineState { get; set; }
-
-        public RadioState RadioState { get; set; }
-
-        public List<String> MessageLog { get; set; }
-
         public override void StartVehicle(IVehicle car)
         {
             if (car.FuelType == FuelType.Diesel)
             {
-                WarmGlowplugs(car);
+                base.WarmGlowplugs(car);
             }
 
             base.StartVehicle(car);
@@ -59,7 +45,9 @@ namespace SampleLibrary
             base.StopVehicle(car);
         }
 
-        //private void SetCarRadioState(Car car)
+
+        //// reduce complexity
+        //private void SetCarRadioState(IVehicle car)
         //{
         //    switch (car.RadioState)
         //    {
